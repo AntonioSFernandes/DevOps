@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  main_service:
+    build: ./main_service
+    container_name: main_service
+    environment:
+      - FLASK_ENV=development
+    ports:
+      - "5000:5000"
+
+  food_service:
+    build: ./food_service
+    container_name: food_service
+    environment:
+      - FLASK_ENV=development
+    ports:
+      - "5001:5001"
